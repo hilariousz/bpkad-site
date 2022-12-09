@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "org_structures",
+  "info": {
+    "singularName": "org-structure",
+    "pluralName": "org-structures",
+    "displayName": "Struktur Organisasi",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

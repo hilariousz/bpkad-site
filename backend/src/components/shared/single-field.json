@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_single_fields",
+  "info": {
+    "displayName": "SingleField"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

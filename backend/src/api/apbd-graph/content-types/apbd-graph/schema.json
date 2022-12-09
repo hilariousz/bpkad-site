@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apbd_graphs",
+  "info": {
+    "singularName": "apbd-graph",
+    "pluralName": "apbd-graphs",
+    "displayName": "Grafik APBD",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "labelYear": {
+      "required": true,
+      "min": 1998,
+      "type": "integer",
+      "max": 2999,
+      "unique": true
+    },
+    "totalAPBD": {
+      "type": "float",
+      "required": true
+    },
+    "totalPendapatan": {
+      "type": "float",
+      "required": true
+    },
+    "totalBelanja": {
+      "type": "float",
+      "required": true
+    }
+  }
+}

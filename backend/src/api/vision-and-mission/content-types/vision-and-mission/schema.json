@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "vision_and_missions",
+  "info": {
+    "singularName": "vision-and-mission",
+    "pluralName": "vision-and-missions",
+    "displayName": "Visi dan Misi",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "vision": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.single-field"
+    },
+    "mission": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.single-field"
+    }
+  }
+}

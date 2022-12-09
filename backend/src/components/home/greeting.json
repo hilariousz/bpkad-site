@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_home_greetings",
+  "info": {
+    "displayName": "Greeting",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "intro": {
+      "type": "string",
+      "required": true
+    },
+    "greeting": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

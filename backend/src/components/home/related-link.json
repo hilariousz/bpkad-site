@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_home_related_links",
+  "info": {
+    "displayName": "RelatedLink",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "alt": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

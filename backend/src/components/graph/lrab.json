@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_graph_lrabs",
+  "info": {
+    "displayName": "LRAB",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "enumeration",
+      "enum": [
+        "Belanja Pegawai",
+        "Belanja Barang dan Jasa",
+        "Belanja Subsidi",
+        "Belanja Hibah",
+        "Belanja Bantuan Sosial",
+        "Belanja Modal Tanah",
+        "Belanja Modal Peralatan & Mesin",
+        "Belanja Modal Gedung & Bangunan",
+        "Belanja Modal Jalan, Jaringan, & Irigasi",
+        "Belanja Modal Aset Tetap Lainnya",
+        "Belanja Tak Terduga",
+        "Belanja Bantuan Keuangan"
+      ],
+      "required": true
+    },
+    "anggaran": {
+      "type": "float"
+    },
+    "realisasi": {
+      "type": "float"
+    }
+  }
+}

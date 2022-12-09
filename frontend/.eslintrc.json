@@ -1,0 +1,9 @@
+{
+  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "plugins": ["tailwindcss", "prettier"],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "prettier/prettier": ["warn", { "endOfLine": "auto" }],
+    "no-console": "warn"
+  }
+}

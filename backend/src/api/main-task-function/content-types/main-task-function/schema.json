@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_task_functions",
+  "info": {
+    "singularName": "main-task-function",
+    "pluralName": "main-task-functions",
+    "displayName": "Tugas Pokok dan Fungsi",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

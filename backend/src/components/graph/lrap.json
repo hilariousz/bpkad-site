@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_graph_lraps",
+  "info": {
+    "displayName": "LRAP"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "enumeration",
+      "enum": [
+        "Pajak Daerah",
+        "Retribusi Daerah",
+        "Hasil Pengelolaan Kekayaan Daerah",
+        "Lain-Lain PAD yang Sah",
+        "Dana Perimbangan",
+        "Dana Insentif Daerah",
+        "Dana Desa",
+        "Pendapatan Bagi Hasil",
+        "Bantuan Keuangan"
+      ]
+    },
+    "anggaran": {
+      "type": "float"
+    },
+    "realisasi": {
+      "type": "float"
+    }
+  }
+}
