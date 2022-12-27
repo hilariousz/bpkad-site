@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { formatDate } from '@/utils/formatDate'
 import { ChevronRightIcon } from '@heroicons/react/24/solid'
 import { BlurhashCanvas } from 'react-blurhash'
 
@@ -25,8 +26,11 @@ export default function Card({ props }: any) {
         <div className="flex flex-1 flex-col justify-between px-4 py-4">
           <div className="space-y-2">
             <span className="text-sm text-gray-500 dark:text-gray-400"></span>
+            <p className="text-xs text-gray-500">
+              {formatDate(new Date(props.attributes.publishedAt))}
+            </p>
             <h1 className="text-md font-medium">{props.attributes.title}</h1>
-            <p className="text-md line-clamp-3">
+            <p className="text-sm line-clamp-3">
               {props.attributes.description}
             </p>
             <p className="flex items-center text-green-600">

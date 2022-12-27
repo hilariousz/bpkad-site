@@ -14,7 +14,7 @@ export default function Breadcrumb({
         <React.Fragment key={index}>
           {child}
           <span>
-            <ChevronRightIcon className="h-4 w-4 text-gray-900" />
+            <ChevronRightIcon className="h-4 w-4 text-gray-900 dark:text-white" />
           </span>
         </React.Fragment>
       )

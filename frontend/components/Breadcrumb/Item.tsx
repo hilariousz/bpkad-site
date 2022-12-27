@@ -16,7 +16,7 @@ export default function BreadcrumbItem({
     <li className="capitalize" {...props}>
       <Link
         href={href}
-        className={clsx(isCurrent && 'text-gray-900')}
+        className={clsx(isCurrent && 'text-green-600')}
         aria-label="breadcrumb link"
         aria-current={isCurrent ? 'page' : 'false'}
       >

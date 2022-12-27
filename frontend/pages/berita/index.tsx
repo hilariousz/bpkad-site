@@ -17,7 +17,7 @@ export default function Berita({ articles }: any) {
   const [pageIndex, setPageIndex] = React.useState(1)
 
   const { data } = useSWR(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/articles/?populate=*&pagination[page]=${pageIndex}&pagination[pageSize]=6`,
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/articles/?populate=*&sort[0]=publishedAt%3Adesc&pagination[page]=${pageIndex}&pagination[pageSize]=6`,
     fetcher,
     { fallbackData: articles }
   )
@@ -62,6 +62,7 @@ export default function Berita({ articles }: any) {
 export const getStaticProps: GetStaticProps = async () => {
   const articles = await fetchAPI('/articles', {
     populate: '*',
+    sort: ['publishedAt:desc'],
     pagination: {
       pageSize: 6,
     },

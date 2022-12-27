@@ -1,9 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
+
 import Link from 'next/link'
 import Image from 'next/image'
-import moment from 'moment'
+import { BlurhashCanvas } from 'react-blurhash'
 import ReactMarkdown from 'react-markdown'
+import { formatDate } from '@/utils/formatDate'
 import Container from '@/components/Container'
 
 import { getStrapiURL, fetchAPI } from '@/lib/api'
@@ -14,7 +16,7 @@ export default function Article({ article, articles }: any) {
     description: article.attributes.description,
   }
 
-  const { url, width, height, alternativeText } =
+  const { url, width, height, alternativeText, placeholder } =
     article.attributes.cover.data.attributes
 
   return (
@@ -26,15 +28,17 @@ export default function Article({ article, articles }: any) {
             <h1 className="text-3xl font-bold">{article.attributes.title}</h1>
             <span className="text-sm text-gray-500 dark:text-gray-400">
               Dipublikasikan{' '}
-              {moment(article.attributes.publishedAt).format('LL')}
+              {formatDate(new Date(article.attributes.publishedAt))}
             </span>
-            <Image
-              className="max-h-[500px] rounded-sm object-cover"
-              src={getStrapiURL(url)}
-              alt={alternativeText}
-              width={width}
-              height={height}
-            />
+            <div className="flex items-center justify-center">
+              <Image
+                className="max-h-[500px] rounded-sm object-cover"
+                src={getStrapiURL(url)}
+                alt={alternativeText}
+                width={width}
+                height={height}
+              />
+            </div>
             <div className="prose mx-auto max-w-none dark:prose-invert">
               <ReactMarkdown>{article.attributes.content}</ReactMarkdown>
             </div>
@@ -62,6 +66,11 @@ function LatestArticles({ articles }: any) {
           >
             <div className="flex space-x-4 p-2">
               <div className="relative h-20 min-w-[120px]">
+                <BlurhashCanvas
+                  hash={item.attributes.cover.data.attributes.placeholder}
+                  punch={1}
+                  className="absolute inset-0 z-[-1] h-full w-full rounded-md"
+                />
                 <Image
                   className="rounded-md object-cover"
                   src={getStrapiURL(item.attributes.cover.data.attributes.url)}
@@ -73,6 +82,9 @@ function LatestArticles({ articles }: any) {
                 <h2 className="text-base font-bold lg:text-sm">
                   {item.attributes.title}
                 </h2>
+                <p className="text-sm text-gray-500">
+                  {formatDate(new Date(item.attributes.publishedAt))}
+                </p>
               </div>
             </div>
           </Link>
@@ -91,7 +103,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         slug: post.attributes.slug,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   }
 }
 
@@ -110,8 +122,15 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
         },
       },
       populate: '*',
+      sort: ['publishedAt:desc'],
     }),
   ])
+
+  if (!article.data[0]) {
+    return {
+      notFound: true,
+    }
+  }
 
   return {
     props: { article: article.data[0], articles: articles.data },

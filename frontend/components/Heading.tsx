@@ -32,10 +32,10 @@ export default function Heading({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex h-48 w-screen items-center justify-start bg-heading bg-center bg-no-repeat md:mb-8">
       <div className="mx-auto flex max-w-7xl flex-1 flex-col space-y-2">
-        <div className="px-2">
+        <div className="px-4 md:px-6 lg:px-5">
           <Breadcrumb>
             <Item isCurrent={router.pathname === '/'} href="/">
-              <HomeIcon className="h-4 w-4 text-gray-900" />
+              <HomeIcon className="h-4 w-4 text-gray-900 dark:text-white" />
             </Item>
             {breadcrumbs &&
               breadcrumbs.map((breadcrumb: any) => (

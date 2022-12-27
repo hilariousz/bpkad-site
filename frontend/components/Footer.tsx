@@ -92,7 +92,7 @@ export default function Footer() {
                   <span>
                     <PhoneIcon className="h-5 w-5 text-gray-500" />
                   </span>
-                  <p>(+62) 822-9898-2332</p>
+                  <p>-</p>
                 </div>
                 <div className="flex space-x-2 text-sm">
                   <span>

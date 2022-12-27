@@ -50,6 +50,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const articleRes = fetchAPI('/articles', {
     populate: '*',
+    sort: ['publishedAt:desc'],
     pagination: {
       limit: 3,
     },

@@ -61,7 +61,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         slug: photo.attributes.slug,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   }
 }
 
@@ -74,6 +74,12 @@ export const getStaticProps: GetStaticProps<{ photos: any }> = async ({
     },
     populate: '*',
   })
+
+  if (!photos.data) {
+    return {
+      notFound: true,
+    }
+  }
 
   return {
     props: {
